@@ -9,7 +9,7 @@ end
 
 ActiveRecord::Schema.define(version: Time.now.to_i) do
   create_table 'orders', force: :cascade do |t|
-    t.string 'ref'
+    t.string 'ref', unique: true, length: 10
     t.integer 'price_cents'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
