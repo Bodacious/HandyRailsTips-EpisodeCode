@@ -9,3 +9,5 @@ ruby '2.7.2'
 gem 'activerecord'
 gem 'rspec'
 gem 'sqlite3'
+
+gem "irb", "~> 1.2"

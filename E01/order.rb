@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'application_record'
-require 'securerandom'
+require_relative "random_ref"
 class Order < ApplicationRecord
   # ==============================================================================
   # = Validations =
@@ -24,6 +24,6 @@ class Order < ApplicationRecord
   end
 
   def random_ref
-    SecureRandom.hex(5).upcase
+    RandomRef.new.to_s
   end
 end
