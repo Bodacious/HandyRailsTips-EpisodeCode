@@ -4,10 +4,10 @@ class RandomRef
 
   attr_reader :string
 
-  alias to_s string 
+  alias to_s string
 
   def initialize(length: 10)
-    @string = CHARS.shuffle.take(length).join
+    @string = length.times.map { CHARS.sample }.join
   end
 
 end

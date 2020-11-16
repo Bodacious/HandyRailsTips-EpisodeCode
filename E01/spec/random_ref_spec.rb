@@ -17,6 +17,12 @@ RSpec.describe RandomRef do
       expect(RandomRef.new.to_s).not_to eql(RandomRef.new.to_s)
     end
 
+    it "allows repeat characters" do
+      length = RandomRef::CHARS.length + 1
+      string = RandomRef.new(length: length).string
+      expect(string).to match(/[A-Z0-9]{37}/)
+    end
+
     context "when we specify a different length" do
 
       it "returns a String of the expected length" do
